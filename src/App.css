@@ -1,42 +1,111 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.page {
+  min-height: 100vh;
+}
+
+.layout {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 48px 24px 48px 0;
+  display: grid;
+  gap: 36px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.content {
+  min-width: 0;
+}
+
+.heroPortrait {
+  margin: 0;
   text-align: center;
+  align-self: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.heroPortrait img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+.eyebrow {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 8px 0;
+}
+
+.contactBlock,
+.languageBlock {
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  border-radius: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.contactBlock a {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.languageBlock ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.8s ease forwards;
+}
+
+.reveal--delay-1 {
+  animation-delay: 0.1s;
+}
+
+.reveal--delay-2 {
+  animation-delay: 0.2s;
+}
+
+.reveal--delay-3 {
+  animation-delay: 0.3s;
+}
+
+.reveal--delay-4 {
+  animation-delay: 0.4s;
+}
+
+@keyframes rise {
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (min-width: 900px) {
+  .layout {
+    grid-template-columns: 320px minmax(0, 1fr);
+    align-items: start;
+    padding-left: 0;
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+@media (max-width: 600px) {
+  .layout {
+    padding: 32px 18px;
+  }
 }
