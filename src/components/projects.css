@@ -1,0 +1,117 @@
+.projects {
+  padding: 72px 16px;
+}
+
+.projects__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.projects__title {
+  font-size: 34px;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.projects__subtitle {
+  margin: 10px auto 28px auto;
+  text-align: center;
+  opacity: 0.8;
+  max-width: 720px;
+  line-height: 1.5;
+}
+
+.projects__grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 860px) {
+  .projects__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.projectCard {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+}
+
+.projectCard__top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.projectCard__title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.35;
+}
+
+.projectCard__btn {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: transparent;
+  color: inherit;
+  padding: 8px 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.projectCard__btn:hover {
+  opacity: 1;
+}
+
+.projectCard__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 10px 0;
+}
+
+.projectCard__tag {
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  opacity: 0.9;
+}
+
+.projectCard__desc {
+  margin: 0;
+  line-height: 1.55;
+  opacity: 0.9;
+
+  /* Kapalı hali */
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.projectCard__desc.open {
+  display: block;
+}
+
+.projectCard__link {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+.projectCard__hint {
+  display: inline-block;
+  margin-top: 12px;
+  opacity: 0.6;
+  font-size: 12px;
+}
