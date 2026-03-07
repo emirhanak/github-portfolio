@@ -1,11 +1,21 @@
-import { projects } from "../data/projects";
+import type { Project } from "../data/projects";
 import "./projects.css";
 
-export default function Projects() {
+type ProjectsProps = {
+  projects: Project[];
+  title: string;
+  openProjectLabel: string;
+};
+
+export default function Projects({
+  projects,
+  title,
+  openProjectLabel,
+}: ProjectsProps) {
   return (
     <section className="projects" id="projects">
       <div className="section__intro reveal">
-        <h2 className="section__title">Projelerim</h2>
+        <h2 className="section__title">{title}</h2>
       </div>
 
       <div className="projects__grid">
@@ -18,7 +28,7 @@ export default function Projects() {
               <div className="projectCard__header">
                 <div>
                   <span className="projectCard__index">
-                    0{index + 1}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
                   <h3 className="projectCard__title">{project.title}</h3>
                 </div>
@@ -34,9 +44,7 @@ export default function Projects() {
                 </div>
               ) : null}
 
-              <p className="projectCard__desc">
-                {project.description}
-              </p>
+              <p className="projectCard__desc">{project.description}</p>
 
               {project.link ? (
                 <a
@@ -45,7 +53,7 @@ export default function Projects() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  Projeyi aç →
+                  {openProjectLabel}
                 </a>
               ) : null}
             </article>
